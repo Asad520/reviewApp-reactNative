@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
-import { Text, View,FlatList,TouchableOpacity } from "react-native";
+import { Text, View,FlatList,TouchableOpacity, ImageBackground } from "react-native";
 import { globalStyles } from "../styles/global";
 import Card from '../shared/Card'
 
 export default function Home({navigation}){
     const [games, setgames] = useState([
-        {key:'1', title:'Tekken 1', rating:'2', body:'Lorem Ipsum oui ouiii!'},
+        {key:'1', title:'Tekken', rating:'2', body:'Lorem Ipsum oui ouiii!'},
         {key:'2', title:'Tekken 2', rating:'4', body:'Lorem Ipsum oui ouiii!'},
         {key:'3', title:'Tekken 3', rating:'5', body:'Lorem Ipsum oui ouiii!'},
         {key:'4', title:'Tekken 4', rating:'2', body:'Lorem Ipsum oui ouiii!'},
@@ -18,7 +18,7 @@ export default function Home({navigation}){
         navigation.navigate('ReviewDetails')
     }
     return(
-        <View style={globalStyles.cont}>
+        <ImageBackground source={require('../assets/bg.png')} style={globalStyles.cont}>
             <FlatList 
             data={games}
             renderItem={({item})=>(
@@ -29,9 +29,6 @@ export default function Home({navigation}){
                 </TouchableOpacity>
             )}
             />
-            {/* <View style={[{width:'60%', marginTop:10}]}>
-            <Button title='Review Details' onPress={pressHandler}/>
-            </View> */}
-        </View>
+        </ImageBackground>
     )
 }

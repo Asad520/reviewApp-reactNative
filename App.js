@@ -15,7 +15,7 @@ export default function App() {
   if(fontLoaded){
   return (
     <>
-      <StatusBar style="auto" backgroundColor="white" />
+      <StatusBar style="auto" backgroundColor="#f9aeae" />
       <Navigator />
     </>
     );}else{

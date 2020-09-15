@@ -8,7 +8,7 @@ export const globalStyles = StyleSheet.create({
     textHeading:{
         fontFamily:'ArchitectsDaughter-Regular',
         fontSize:40 ,
-        color:"#333"
+        color:"#f9aeae"
     },
     paragraph:{
         lineHeight:20,

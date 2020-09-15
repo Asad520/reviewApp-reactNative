@@ -7,11 +7,10 @@ import Header from '../shared/Header'
 const screens = {
     Home:{
         screen:Home,
-        navigationOptions:({navigation})=>{
-            return {
-                headerTitle:()=><Header navigation={navigation} title='GameZone'/>
-            }
+        navigationOptions:{
+            header:({navigation})=><Header navigation={navigation} title='GameZone' />
         }
+        
     },
     ReviewDetails:{
         screen:ReviewDetails, 
@@ -24,10 +23,10 @@ const screens = {
 }
 const HomeStack = createStackNavigator(screens,{
     defaultNavigationOptions:{
-        headerTintColor:'black',
+        headerTintColor:'white',
         headerStyle:{
-            backgroundColor:'#257BD1',
-            height:90
+            backgroundColor:'transparent',
+            height:90,
         }
     }
 })
