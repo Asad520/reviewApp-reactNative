@@ -18,6 +18,10 @@ const screens = {
         navigationOptions:{
             title:'Game Review',
             headerTitleAlign:'center',
+            headerTintColor:'black',
+            headerStyle:{
+                backgroundColor:'#a50d0d',
+                height:110}
         }
     }
 }

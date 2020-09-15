@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Image, StyleSheet } from 'react-native'
+import { View, Text, Image, StyleSheet, ImageBackground } from 'react-native'
 import { globalStyles, images } from "../styles/global";
 import Card from '../shared/Card'
 
@@ -8,17 +8,20 @@ export default function ReviewDetails({navigation}) {
         navigation.navigate('Home')
     }
     return (
-        <View style={globalStyles.cont}>
+        <ImageBackground source={require('../assets/bg.png')} style={globalStyles.cont}>
+            <View style={{marginTop:100}}>                
             <Card>
                 <Text style={styles.text}>TITLE: {navigation.getParam('title')} </Text>
                 <Text style={styles.text}>ABOUT: {navigation.getParam('body')} </Text>
                 <View style={styles.rate}>
                     <Text style={{fontSize:15,
-                    fontWeight:'bold'}}>GameZone Rating:</Text>
+                    fontWeight:'bold'}}>GameZone Rating:
+                    </Text>
                     <Image source={images.ratings[navigation.getParam('rating')]} />
                 </View>
             </Card>
-        </View>
+            </View>
+        </ImageBackground>
     )
 }
 
