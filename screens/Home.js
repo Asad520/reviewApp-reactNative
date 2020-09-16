@@ -55,24 +55,14 @@ export default function Home({ navigation }) {
     },
   ]);
 
-  const pressHandler = () => {
-    navigation.navigate("ReviewDetails");
-  };
   return (
     <ImageBackground
       source={require("../assets/bg.png")}
       style={globalStyles.cont}
     >
-      <Modal visible={Modall} animationType="slide" transparent={true}>
+      <Modal visible={Modall} animationType="slide">
         <View style={styles.modalContent}>
-          <MaterialIcons
-            name="close"
-            size={30}
-            color="white"
-            onPress={() => setModall(false)}
-            style={{ ...styles.modal, ...styles.modalClose }}
-          />
-          <ReviewForm />
+          <ReviewForm setModall={setModall} />
         </View>
       </Modal>
       <MaterialIcons
@@ -110,12 +100,11 @@ const styles = StyleSheet.create({
   },
   modalClose: {
     backgroundColor: "maroon",
-    marginTop: 20,
     marginBottom: 0,
     opacity: 1,
-    marginTop: "28.5%",
   },
   modalContent: {
     flex: 1,
+    backgroundColor: "maroon",
   },
 });
