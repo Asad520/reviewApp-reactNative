@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import { globalStyles } from "../styles/global";
 import Card from "../shared/Card";
+import ReviewForm from "./ReviewForm";
 import { MaterialIcons } from "@expo/vector-icons";
 
 export default function Home({ navigation }) {
@@ -62,8 +63,8 @@ export default function Home({ navigation }) {
       source={require("../assets/bg.png")}
       style={globalStyles.cont}
     >
-      <Modal visible={Modall} animationType="slide">
-        <View style={styles.modelContent}>
+      <Modal visible={Modall} animationType="slide" transparent={true}>
+        <View style={styles.modalContent}>
           <MaterialIcons
             name="close"
             size={30}
@@ -71,7 +72,7 @@ export default function Home({ navigation }) {
             onPress={() => setModall(false)}
             style={{ ...styles.modal, ...styles.modalClose }}
           />
-          <Text> Halo from Modal!!! </Text>
+          <ReviewForm />
         </View>
       </Modal>
       <MaterialIcons
@@ -108,9 +109,11 @@ const styles = StyleSheet.create({
     opacity: 0.7,
   },
   modalClose: {
-    backgroundColor: "#990000",
+    backgroundColor: "maroon",
     marginTop: 20,
     marginBottom: 0,
+    opacity: 1,
+    marginTop: "28.5%",
   },
   modalContent: {
     flex: 1,
