@@ -8,6 +8,7 @@ import {
   Modal,
   StyleSheet,
 } from "react-native";
+import uuid from "uuid";
 import { globalStyles } from "../styles/global";
 import Card from "../shared/Card";
 import ReviewForm from "./ReviewForm";
@@ -30,31 +31,19 @@ export default function Home({ navigation }) {
       body: "Lorem Ipsum oui ouiii!",
     },
     {
-      key: "4",
-      title: "Tekken 4",
-      rating: "2",
-      body: "Lorem Ipsum oui ouiii!",
-    },
-    {
-      key: "5",
-      title: "Tekken 5",
-      rating: "4",
-      body: "Lorem Ipsum oui ouiii!",
-    },
-    {
-      key: "6",
-      title: "Tekken 6",
-      rating: "4",
-      body: "Lorem Ipsum oui ouiii!",
-    },
-    {
       key: "7",
       title: "Tekken 7",
       rating: "4",
       body: "Lorem Ipsum oui ouiii!",
     },
   ]);
-
+  const addReview = (review) => {
+    review.key = uuid();
+    setgames((prevReviews) => {
+      return [review, ...prevReviews];
+    });
+    setModall(false);
+  };
   return (
     <ImageBackground
       source={require("../assets/bg.png")}
@@ -62,7 +51,7 @@ export default function Home({ navigation }) {
     >
       <Modal visible={Modall} animationType="slide">
         <View style={styles.modalContent}>
-          <ReviewForm setModall={setModall} />
+          <ReviewForm setModall={setModall} addReview={addReview} />
         </View>
       </Modal>
       <MaterialIcons

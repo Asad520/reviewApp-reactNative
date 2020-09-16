@@ -13,7 +13,7 @@ import { globalStyles } from "../styles/global";
 import { MaterialIcons } from "@expo/vector-icons";
 import { Formik } from "formik";
 
-export default function ReviewForm({ setModall }) {
+export default function ReviewForm({ setModall, addReview }) {
   return (
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <ImageBackground
@@ -29,7 +29,10 @@ export default function ReviewForm({ setModall }) {
         />
         <Formik
           initialValues={{ title: "", body: "", rating: "" }}
-          onSubmit={(values) => console.log(values)}
+          onSubmit={(values) => {
+            console.log(values);
+            addReview(values);
+          }}
         >
           {(props) => (
             <View>
