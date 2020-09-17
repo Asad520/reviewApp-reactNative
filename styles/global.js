@@ -24,6 +24,14 @@ export const globalStyles = StyleSheet.create({
     marginVertical: 10,
     color: "white",
   },
+  errorText: {
+    color: "red",
+    fontWeight: "bold",
+    textAlign: "center",
+    marginTop: 6,
+    marginBottom: 10,
+    fontSize: 15,
+  },
 });
 
 export const images = {

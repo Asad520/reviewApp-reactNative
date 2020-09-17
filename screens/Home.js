@@ -17,13 +17,13 @@ import { MaterialIcons } from "@expo/vector-icons";
 export default function Home({ navigation }) {
   const [Modall, setModall] = useState(false);
   const [games, setgames] = useState([
-    { key: "1", title: "Tekken", rating: "2", body: "Lorem Ipsum oui ouiii!" },
     {
       key: "2",
-      title: "Tekken 2",
+      title: "GTA V",
       rating: "4",
       body: "Lorem Ipsum oui ouiii!",
     },
+    { key: "1", title: "Tekken", rating: "2", body: "Lorem Ipsum oui ouiii!" },
     {
       key: "3",
       title: "Tekken 3",
@@ -38,9 +38,14 @@ export default function Home({ navigation }) {
     },
   ]);
   const addReview = (review) => {
-    review.key = uuid();
+    tempRev = {
+      body: review.body.trim(),
+      title: review.title.trim(),
+      rating: review.rating.trim(),
+      id: uuid(),
+    };
     setgames((prevReviews) => {
-      return [review, ...prevReviews];
+      return [tempRev, ...prevReviews];
     });
     setModall(false);
   };
