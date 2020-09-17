@@ -38,7 +38,7 @@ export default function Home({ navigation }) {
     },
   ]);
   const addReview = (review) => {
-    tempRev = {
+    let tempRev = {
       body: review.body.trim(),
       title: review.title.trim(),
       rating: review.rating.trim(),

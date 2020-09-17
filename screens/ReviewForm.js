@@ -8,6 +8,7 @@ import {
   StyleSheet,
   Keyboard,
   TouchableWithoutFeedback,
+  KeyboardAvoidingView,
 } from "react-native";
 import * as yup from "yup";
 import { globalStyles } from "../styles/global";
@@ -96,7 +97,11 @@ export default function ReviewForm({ setModall, addReview }) {
               </Text>
               <TouchableOpacity onPress={props.handleSubmit} style={styles.but}>
                 <Text
-                  style={{ color: "white", fontSize: 20, paddingVertical: 10 }}
+                  style={{
+                    color: "white",
+                    fontSize: 20,
+                    paddingVertical: 10,
+                  }}
                 >
                   Submit Review!
                 </Text>
